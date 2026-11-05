@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+:root {
+  /* Official Brand Color System - Strict: NO PURPLE */
+  --bg-primary: #080B12;        /* Obsidian Black */
+  --bg-secondary: #0D111A;      /* Deep Midnight */
+  --surface: #151B26;           /* Cyber Surface */
+  --surface-hover: #1E2638;     /* Surface Hover */
+  --electric-blue: #1677FF;     /* Primary Interactive / Energy */
+  --electric-blue-glow: rgba(22, 119, 255, 0.4);
+  --electric-blue-soft: rgba(22, 119, 255, 0.15);
+  --acid-lime: #C6FF3D;         /* Selective Highlights / Accents */
+  --acid-lime-glow: rgba(198, 255, 61, 0.45);
+  --acid-lime-soft: rgba(198, 255, 61, 0.12);
+  --text-primary: #F5F7FA;      /* Silver White */
+  --text-secondary: #A5ACB8;    /* Steel Gray */
+  --text-muted: #697386;        /* Muted Code */
+  --border-color: #252D3A;      /* Technical Grid Border */
+  --border-glow: #1677FF;       /* Active Glow Border */
+}
+
+@theme {
+  --color-obsidian: var(--bg-primary);
+  --color-midnight: var(--bg-secondary);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-electric: var(--electric-blue);
+  --color-lime: var(--acid-lime);
+  --color-silver: var(--text-primary);
+  --color-steel: var(--text-secondary);
+  --color-muted: var(--text-muted);
+  --color-cyber-border: var(--border-color);
+
+  --font-display: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #080B12;
+  color: #F5F7FA;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #080B12;
+  color: #F5F7FA;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Text Selection */
+::selection {
+  background-color: #1677FF;
+  color: #F5F7FA;
+}
+
+/* Custom Cyber Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080B12;
+}
+::-webkit-scrollbar-thumb {
+  background: #252D3A;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1677FF;
+}
+
+/* Display and Technical Typography Classes */
+.font-display {
+  font-family: var(--font-space-grotesk), sans-serif;
+}
+.font-mono {
+  font-family: var(--font-jetbrains-mono), monospace;
+}
+.font-sans {
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* Cyberpunk Utility Grids & Textures */
+.cyber-grid {
+  background-image: 
+    linear-gradient(to right, rgba(37, 45, 58, 0.2) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(37, 45, 58, 0.2) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.cyber-grid-dense {
+  background-image: 
+    linear-gradient(to right, rgba(22, 119, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(22, 119, 255, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Refined Minimalist Glow Utilities - Strictly Blue & Lime */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(22, 119, 255, 0.3);
+}
+
+.glow-lime {
+  box-shadow: 0 0 16px rgba(198, 255, 61, 0.35);
+}
+
+.text-glow-blue {
+  text-shadow: 0 0 16px rgba(22, 119, 255, 0.5);
+}
+
+.text-glow-lime {
+  text-shadow: 0 0 12px rgba(198, 255, 61, 0.45);
+}
+
+/* Editorial Corner Notches */
+.cyber-cut {
+  clip-path: polygon(
+    0 10px,
+    10px 0,
+    100% 0,
+    100% calc(100% - 10px),
+    calc(100% - 10px) 100%,
+    0 100%
+  );
+}
+
+.cyber-cut-sm {
+  clip-path: polygon(
+    0 6px,
+    6px 0,
+    100% 0,
+    100% calc(100% - 6px),
+    calc(100% - 6px) 100%,
+    0 100%
+  );
+}
+
+/* Reduce Motion Fallbacks */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
